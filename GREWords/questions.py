@@ -1,0 +1,211 @@
+from random import randint
+question = [("introspection","examining ones own thought"),
+("philanthropist","one who loves mankind"),
+("antidote","medicine used against a poison or a disease"),
+("strive","to make great efforts"),
+("ambidextrous","able to use the left hand or the right equally well"),
+("precursors","a person or thing that precedes, as in a process or job."),
+("retrospective","looking back on past"),
+("introvert","one who turns towards himself"),
+("ambiguous","uncertain/doubtful"),
+("gerontocracy","government ruled by old people"),
+("aggravate","make worse"),
+("braggart","boastful"),
+("entice","attract, lure"),
+("equilibrium","state of being balanced"),
+("alleviate","make (pain) easier to bear"),
+("adorn","add beauty; decorate"),
+("malevolent","malicious; evil; having or showing ill will"),
+("connote","Suggest or imply in addition to the literal meaning"),
+("abhor","to hate; to detest"),
+("agile","active; quick-moving"),
+("endeavor","to try very hard"),
+("stray","wander lose one's way"),
+("amalgamate","mix; combine"),
+("drowsiness","feeling sleepy half asleep"),
+("xenophile","a person who is attracted to foreign peoples cultures"),
+("sporadic","happening from time to time"),
+("affinity","close connection; relationship"),
+("animosity","strong dislike"),
+("acumen","Keen, quick, accurate insight or judgment"),
+("adulteration","making unpure; poorer in quality"),
+("appease","make quiet or calm"),
+("premature","doing or happening something before the right time"),
+("inquest","judicial inquiry, especially before a jury"),
+("shunned","avoided, kept away from"),
+("anguish","severe suffering"),
+("indigenous","native"),
+("grumble","to complain"),
+("conjoin","join together"),
+("surcharge","extra charge"),
+("accolade","an expression of praise"),
+("impermeable","not permitting passage (as of a fluid) through its substance"),
+("impervious","not allowing entrance or passage"),
+("timid","shy"),
+("abscond","to depart secretly and hide oneself"),
+("embezzle","to appropriate something fraudulently to one's own use"),
+("reminiscent","tending to remind"),
+("loll","to rest , sit or stand in a lazy way"),
+("acclaimed","welcomed with shouts and approval"),
+("affable","polite and friendly"),
+("poseur","a person who attempts to impress by acting unlike himself"),
+("dangle","to hang loosely and usually so as to be able to swing freely"),
+("moribund","in a dying state; near death"),
+("livid","furiously angry"),
+("rejuvenation","restoration of youthful vigor"),
+("vigorous","strong energetic"),
+("dullard","stupid"),
+("nihilism","total rejection of all religious and moral beliefs"),
+("hospitable","liking to give hospitality"),
+("narcissism","Self-love"),
+("ameliorate","improve; make better"),
+("ingest","take in by swallowing"),
+("gait","a manner of walking, stepping, or running"),
+("sluggard","lazy slow-moving person"),
+("reiterate","say or do again several times"),
+("defer","postpone"),
+("ossified","turned to bone; hardened like bone; Inflexible"),
+("eloquence","fluent speaking skillful use of language"),
+("benefactor","person who has given help"),
+("complaisant","trying to please"),
+("flimsy","lacking solidarity, strength"),
+("reconcile","settle a quarrel restore peace"),
+("commemorate","keep the memory of"),
+("dote","show much fondness center one's attention"),
+("fission","splitting or division"),
+("dormant","in a state of inactivity but awaiting development"),
+("grievous","causing grief or pain"),
+("enzyme","catalyst"),
+("euphoria","elation state of pleasant excitement"),
+("misogynist","one who hates women/females"),
+("abysmal","extreme bad"),
+("pertain","to belong as a part, member, accessory, or product"),
+("infuriate","fill with fury or rage"),
+("erratic","irregular in behaviour or opinion"),
+("impromptu","made, done, or formed on or as if on the spur of the moment"),
+("meticulous","giving great attention to details"),
+("dupe","cheat, make a fool of"),
+("extralegal","outside the law"),
+("ambivalent","having both of two contrary meanings"),
+("endorse","to write on the back of"),
+("turbulence","being uncontrollably violent"),
+("connoisseur","a person with good judgement (e.g.. in art)"),
+("abstruse","difficult to comprehend"),
+("sophisticated","complex,refined"),
+("aberration","straying away from what is normal"),
+("perjury","the voluntary violation of an oath or vow")
+# Uncomment below words and add a corresponding picture with it. Picture size
+# max(225) in x and max 225 in y or height or width in pixels.
+# ,("mite","A very small amount, portion, or particle"),
+# ("pest","destructive thing or a person who is nuisance"),
+# ("satiate","satisfy fully"),
+# ("colloquial","involving or using conversation."),
+# ("ail","to cause pain, uneasiness, or trouble to."),
+# ("fidelity","loyalty accuracy"),
+# ("fidem","trust"),
+# ("mesmerize","hypnotize"),
+# ("paradigm","a model example or pattern"),
+# ("gullible","easily fooled"),
+# ("sobriety","quality or condition of being sober"),
+# ("dislodge","move force from the place occupied"),
+# ("articulate","expressing oneself readily, clearly, and effectively"),
+# ("tractable","easily controlled or guided"),
+# ("partisan","one-sided committed to a party biased or prejudiced"),
+# ("predominate","have more power than others"),
+# ("presentiment","premonition"),
+# ("vivacious","lively high-spirited"),
+# ("coagulation","change to a thick and solid state"),
+# ("elaborate","worked out with much care in great detail"),
+# ("patron","regular customer person who gives support"),
+# ("cordial","warm and sincere"),
+# ("beguile","mislead or delude; cheat; pass time"),
+# ("retrograde",""),
+# ("bewilder","puzzle; confuse"),
+# ("jabber","talk excitedly; utter rapidly"),
+# ("pivotal","of great importance"),
+# ("implosion","collapse; bursting inward"),
+# ("enigma","something that is puzzling"),
+# ("buoyant","able to float; light-hearted"),
+# ("impede","hinder; get in the way of"),
+# ("stride","walk with long steps"),
+# ("boisterous",""),
+# ("resuscitation","coming back to consciousness"),
+# ("concur","agree in opinion happen together"),
+# ("treacherous","not to be trusted, perfidious"),
+# ("indulgent","inclined to indulge"),
+# ("pilferer","to steal, especially in small quantities"),
+# ("apartheid","brutal racial discrimination"),
+# ("garrulous","too talkative"),
+# ("edify","instruct"),
+# ("eulogy","formal praise"),
+# ("panegyric","praise in text"),
+# ("arcane","known or understood by very few"),
+# ("dexterity","skill"),
+# ("lampoon","publicly mock or ridicule"),
+# ("multifarious","varied"),
+# ("substantiation","giving facts to support"),
+# ("feud","bitter quarrel over a long period of time"),
+# ("indefatigability","not easily exhaustible"),
+# ("euthanasia","easy and painless death"),
+# ("cognizant","being fully aware of"),
+# ("concoct","invent, prepare by mixing together"),
+# ("irate",""),
+# ("frantic","wildly excited with joy; pain; anxiety"),
+# ("alcove","recess / partially enclosed place"),
+# ("derogatory","insulting; tending to damage"),
+# ("fawn","To seek favor or attention by flattery and obsequious"),
+# ("obsequious","obedient or attentive to an exccessive servile degree"),
+# ("miser","person who loves wealth and spends little"),
+# ("pervade","spread through every part of"),
+# ("imminent","likely to come or happen soon"),
+# ("wanton","willfully malicious"),
+# ("voluptuous","arousing sensual pleasures"),
+# ("coalescing","coming together and uniting into one substance"),
+# ("wince","show bodily or mental pain"),
+# ("loquacious","talkative; garrulous"),
+# ("gush","burst out suddenly/talk ardently"),
+# ("ardent","enthusiastic or passionate"),
+# ("swerve","change direction suddenly"),
+# ("revere","have deep respect for"),
+# ("exculpate","to clear from a charge of guilt"),
+# ("abraded","worn away by friction"),
+# ("squander","spend wastefully"),
+# ("dawdler","person who is slow waste of time"),
+# ("quandary","state of doubt"),
+# ("noxious","harmful")
+];
+
+
+ans = [];
+for i,j in question:
+	ans.append(j);
+
+
+
+
+def getQuestions(n):
+	return question[0,n];
+
+
+def getRandomQuestion():
+	return question[randint(0,len(question)-1)];
+
+
+def getRandomAnswers(answer):
+	m = [];
+	r = randint(0,len(question)-1);
+	count = 0;
+	while count<3:
+		if question[r][1] not in m and question[r][1] != answer:
+			m.append(question[r][1]);
+			count+= 1;	
+
+		r = randint(0,len(question) - 1);
+	return m;
+
+
+
+
+
+
+

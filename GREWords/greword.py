@@ -107,7 +107,7 @@ def displayScore():
 	questionLabel.config(text="Score is "+str(score) + "/" + str(times))
 
 
-def sel():
+def sel(event=None):
 	global selectedanswer;
 	global times;
 	global timescount;
@@ -123,6 +123,8 @@ def sel():
 		callback()
 	else:
 		displayScore()
+		
+root.bind('<Return>',sel)
 
 
 label = Label(bottomFrame);

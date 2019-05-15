@@ -69,32 +69,37 @@ def callback():
 	questionTemp = q.getRandomQuestion();
 	global selectedanswer;
 	global img;
-	path = './images/' + questionTemp[0] + '.jpg'
-	img = ImageTk.PhotoImage(Image.open(path))
-	questionAnswers = q.getRandomAnswers(questionTemp[1]);
-	questionLabel.config(text=questionTemp[0]);
-	if a == 0:
-		one.config(text=questionTemp[1],value=questionTemp[1])
-		two.config(text=questionAnswers[0])
-		three.config(text=questionAnswers[1])
-		four.config(text=questionAnswers[2])
-	elif a == 1:
-		one.config(text=questionAnswers[0])
-		two.config(text=questionTemp[1],value=questionTemp[1])
-		three.config(text=questionAnswers[1])
-		four.config(text=questionAnswers[2])
-	elif a == 2:
-		one.config(text=questionAnswers[0])
-		two.config(text=questionAnswers[1])
-		three.config(text=questionTemp[1],value=questionTemp[1])
-		four.config(text=questionAnswers[2])
-	else:
-		one.config(text=questionAnswers[0])
-		two.config(text=questionAnswers[1])
-		three.config(text=questionAnswers[2])
-		four.config(text=questionTemp[1],value=questionTemp[1])
+	try:
+		path = './images/' + questionTemp[0] + '.jpg'
+		img = ImageTk.PhotoImage(Image.open(path))
+	except:
+		path = './images/' + questionTemp[0] + '.png'
+		img = ImageTk.PhotoImage(Image.open(path))
+	finally:
+		questionAnswers = q.getRandomAnswers(questionTemp[1]);
+		questionLabel.config(text=questionTemp[0]);
+		if a == 0:
+			one.config(text=questionTemp[1],value=questionTemp[1])
+			two.config(text=questionAnswers[0])
+			three.config(text=questionAnswers[1])
+			four.config(text=questionAnswers[2])
+		elif a == 1:
+			one.config(text=questionAnswers[0])
+			two.config(text=questionTemp[1],value=questionTemp[1])
+			three.config(text=questionAnswers[1])
+			four.config(text=questionAnswers[2])
+		elif a == 2:
+			one.config(text=questionAnswers[0])
+			two.config(text=questionAnswers[1])
+			three.config(text=questionTemp[1],value=questionTemp[1])
+			four.config(text=questionAnswers[2])
+		else:
+			one.config(text=questionAnswers[0])
+			two.config(text=questionAnswers[1])
+			three.config(text=questionAnswers[2])
+			four.config(text=questionTemp[1],value=questionTemp[1])
 
-	panel.config(image = img)
+		panel.config(image = img)
 
 
 def displayScore():

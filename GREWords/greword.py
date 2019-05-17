@@ -6,7 +6,7 @@ from PIL import ImageTk, Image
 #initializes the window and segments them in frame.
 root = Tk()
 root.title("GRE Frequent Word list, Made By - Sarvesh Bhatnagar")
-root.geometry('720x520+0+0')
+root.geometry('1020x1020+0+0')
 root.configure(background='black')
 topFrame = Frame(root)
 topFrame.pack()
@@ -84,12 +84,18 @@ def callback():
 	questionTemp = q.getRandomQuestion();
 	global selectedanswer;
 	global img;
+	global Deathwing2;
 	try:
 		path = './images/' + questionTemp[0] + '.jpg'
-		img = ImageTk.PhotoImage(Image.open(path))
+		im = Image.open(path)
+		im = im.resize((400,400))
+		img = ImageTk.PhotoImage(im)
 	except:
 		path = './images/' + questionTemp[0] + '.png'
-		img = ImageTk.PhotoImage(Image.open(path))
+		im = Image.open(path)
+		im = im.resize((400,400))
+		img = ImageTk.PhotoImage(im)
+		# img = ImageTk.PhotoImage(Image.open(path))
 	finally:
 		questionAnswers = q.getRandomAnswers(questionTemp[1]);
 		questionLabel.config(text=questionTemp[0]);
